@@ -1,0 +1,140 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+//provicionar la matriz de chars para el laberinto
+char** provisionarMatriz(int);
+
+// liberar memoria de la matriz
+void liberarMatriz(char**&, int); //mandamos la refenciar del apuntador de apuntadores
+
+
+// imprimir la matriz
+void imprimirMatriz(char**, int);
+
+//menu
+int menu();
+
+
+
+
+
+
+int main(){
+    char res='s';
+    do{
+        switch(menu()){
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                cout<<"Esta opcion no existe"<<endl;
+                break;
+            
+            
+            
+            
+            
+        }//Fin del switch
+            
+        cout<<"Desea contunuar con el programa?(s/n): ";
+        cin>>res;
+        
+        
+    }while(res=='s' || res=='S');
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return 0;   
+}//Fin del main
+
+
+//Funcion menu
+int menu(){
+    int opcion=0;
+    
+    cout<<"\n---Menu---"<<endl;
+    cout<<"1. (YA viene)"<<endl;
+    cout<<"2. Buenos dia"<<endl;
+    cout<<"Ingrese una opcion: ";
+    cin>>opcion;
+    
+    
+    return opcion;
+    
+    
+}//Fin funcion menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////########################################/////////////////////////////////////
+//provisionar matriz  size x size
+char** provisionarMatriz(int size){
+	char** retValue = new char*[size];
+	
+	for(int i =0; i<size; i++){
+		retValue[i] = new char[size];
+
+	}
+
+
+	return retValue;
+
+}// fin del metodo provicionar matriz
+
+//liberar Matriz
+void liberarMatriz(char**& matriz, int size){
+	for(int i = 0; i<size; i++){
+		delete[] matriz[i];// sin los corchetes solo se  borra la 1era casilla
+		matriz[i] = NULL;
+	}// fin del for
+
+
+	delete[] matriz;
+	matriz = NULL;
+}// fin del metodo
+
+
+//imprimir matriz
+void imprimirMatriz(char** matriz, int size){
+	for(int i = 0; i<size; i++){
+		for(int j = 0; j<size; j++){
+			cout<< matriz[i][j] << " ";
+		}
+		cout<< endl;
+	}
+
+}// fin del metodo
+///////////////////////////////////////########################################///////////////////////////////////// 
